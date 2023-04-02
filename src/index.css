@@ -5,7 +5,9 @@
 .float {
   animation: float-animation 2.5s infinite ease-in-out;
 }
-
+body{
+  background: blueviolet;
+}
 @keyframes float-animation {
   0%,
   100% {

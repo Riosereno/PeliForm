@@ -77,12 +77,13 @@ const App = () => {
 
   const loadMovieToForm = (movieData) => {
     // Cambia el formulario a modo edición
-    setIsEditing(true);
+    setIsEditing(false);
 
     const form = formRef.current;
 
     // TAREA MORAL: Implementar la carga de la información de una pelicula en el formulario
     form.name.value = movieData.name;
+    
   };
 
   useEffect(() => {
@@ -92,19 +93,19 @@ const App = () => {
   return (
     <div className="bg-neutral-800 h-screen flex flex-col justify-center items-center p-10 text-white">
       <form className="flex flex-col gap-4 mb-5" onSubmit={handleSubmit} ref={formRef}>
-        <h2>{isEditing ? 'Edit' : 'Create'} Movie</h2>
+        <h2>{isEditing ? 'Edit' : 'Create'} Usuario</h2>
         <div>
           <label htmlFor="nameId">Name: </label>
           <input type="text" name="name" id="nameId" className="text-black" />
         </div>
         <div>
-          <label htmlFor="genreId">Genre: </label>
+          <label htmlFor="genreId">Last name: </label>
           <input type="text" name="genre" id="genreId" className="text-black" />
         </div>
         <div>
-          <label htmlFor="durationId">Duration (min): </label>
+          <label htmlFor="durationId">Email: </label>
           <input
-            type="number"
+            type="text"
             min="10"
             name="duration"
             id="durationId"
@@ -112,7 +113,7 @@ const App = () => {
           />
         </div>
         <div>
-          <label htmlFor="releaseDateId">Release Date: </label>
+          <label htmlFor="releaseDateId">Birthday: </label>
           <input
             type="date"
             name="release_date"
@@ -122,15 +123,15 @@ const App = () => {
         </div>
 
         <button type="submit" className="border border-transparent hover:border-cyan-400">
-          Create Movie
+          Create Usuario
         </button>
       </form>
 
       <section>
-        <h2 className="text-2xl text-cyan-400 font-bold text-center mb-5">Movie List</h2>
+        <h2 className="text-2xl text-cyan-400 font-bold text-center mb-5">User List</h2>
         <div className="flex flex-row flex-wrap gap-5 justify-center">
           {isLoading ? (
-            <p>Loading movies...</p>
+            <p>Loading usuario...</p>
           ) : (
             movies.map((movie) => (
               <MovieCard movie={movie} key={movie.id} deleteMovie={handleDeleteMovie} />

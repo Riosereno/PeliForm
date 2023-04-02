@@ -6,15 +6,15 @@ const MovieCard = ({ movie, deleteMovie }) => {
       <h2 className="text-cyan-400 text-xl font-bold text-center mb-5">{movie.name}</h2>
       <ul className="mb-5">
         <li>
-          <span className="text-cyan-400">Genre: </span>
+          <span className="text-cyan-400">Last name: </span>
           {movie.genre}
         </li>
         <li>
-          <span className="text-cyan-400">Duration: </span>
-          {movie.duration} min
+          <span className="text-cyan-400">Email: </span>
+          {movie.duration} 
         </li>
         <li>
-          <span className="text-cyan-400">Release Date: </span>
+          <span className="text-cyan-400">Birthay Date: </span>
           {movie.release_date}
         </li>
       </ul>
